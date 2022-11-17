@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Math</title>
+	<style type="text/css">
+			{
+				background: #ff00cc; 
+				background: -webkit-linear-gradient(to right, #333399, #ff00cc);  
+				background: linear-gradient(to right, #333399, #ff00cc);
+			}
+
+			.body
+			{
+				font-family : 'Trebuchet MS';
+				font-size: 40px;
+				color: BLACK;
+				background:#ffd500;
+				text-shadow: 0px 0px 10px white;
+			} 
+			#output
+			{
+				font-family : 'Trebuchet MS';
+				font-size: 40px;
+				color: BLACK;
+				text-shadow: 0px 0px 10px white;
+			}
+	</style>
+</head>
+<body>
+<h1>Javascript Math Objects</h1>
+<div id="output"></div>
+<script type="text/javascript">
+	var pi = Math.PI;
+	var round = Math.round(9.4);
+	var floor = Math.floor(4.1);
+	var min = Math.min(10,20,30,40,50);
+	var max = Math.max(10,90);
+	var truncate = Math.trunc(4.7);
+	var power = Math.pow(3,8);
+	var sqrt = Math.sqrt(36);
+	var random = Math.random();
+	document.getElementById('output').innerHTML = 
+		"pi:"+pi+"<br>"+
+		"round:" +round+"<br>"+
+		"floor:" +floor+"<br>"+
+		"min:" +min+"<br>"+
+		"max:" +max+"<br>"+
+		"truncate:" +truncate+"<br>"+
+		"power:" +power+"<br>"+
+		"sqrt:" +sqrt+"<br>"+
+		"random:" +random+"<br>";
+</script>
+</body>
+</html>
