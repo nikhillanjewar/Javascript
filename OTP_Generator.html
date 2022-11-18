@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .form-sec{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background: #59C173;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            /* padding: 10px; */
+        }
+        input{
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 50px;
+            border: 1px solid salmon;
+            height: 30px;
+        }
+        button {
+            background-color: #a17fe0;
+        }
+    
+    </style>
+    <title>Random</title>
+</head>
+<body>
+    <div class="form-sec">
+        <form class="form">
+            <label>Min</label>
+            <input type="number" name="min" id="min">
+            <label>Max</label>
+            <input type="number" name="max" id="max">
+        </form>
+        <button onclick="otp()" >Generate</button>
+    </div>
+    <div class="output" id="output"></div>
+    <script>
+        function otp() {
+            var min = parseInt(document.getElementById('min').value);
+            var max = parseInt(document.getElementById('max').value);
+            var otp = Math.floor(Math.random()*(max-min+1)) + min
+            console.log(otp)
+            document.getElementById('output').innerHTML = otp
+        }
+        
+    
+    </script>
+</body>
+</html>
