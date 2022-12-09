@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Registration Form</title>
+<script type="text/javascript">
+function verify()
+{
+	var name = document.getElementById("name");
+	var gender = document.getElementsByName("gender");
+	var pass = document.getElementById("pass");
+	var msg = new Array();
+	var flag = 1;
+	var message = "Following Details are Required\n";
+	var message2 = "Following Details are Required<br>";
+	if(name.value == "")
+	{
+		msg[0] = "Name is Required";
+		flag = 0;
+	} else { msg[0] = ""; }
+	
+	if(gender[0].checked == false && gender[1].checked == false)
+	{
+		msg[1] = "Select Gender";
+		flag = 0;
+	} else { msg[1] = ""; }
+		
+	if(pass.value == "")
+	{
+		msg[2] = "Password is Required";
+		flag = 0;
+	} else { msg[2] = ""; }
+	
+	if(pass.value.length < 8)
+	{
+		msg[3] = "Password must be 8 characters long";
+		flag = 0;
+	} else { msg[3] = ""; }
+	
+	if(flag == 0)
+	{
+		// Show Error Messages
+		for(var x=0;x<=3;x++)
+		{
+			if(msg[x] != "")
+			{
+				message += msg[x] + "\n";
+				message2 += msg[x] + "<br>";
+			}
+		}
+		alert(message);
+		document.getElementById("abc").innerHTML = "<p style='color:red;'>"+message2+"</p>";
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+</script>
+</head>
+<body>
+<div align="center">
+	<h1>Registration Form</h1>
+    <h3 id="abc"></h3>
+    <form method="post" action="" onSubmit="return verify()">
+    	<table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+        	<td colspan="2" align="center">* All fields are mandatory</td>
+       </tr>
+       <tr>
+       	<td>Name: </td>
+        <td><input type="text" name="name" id="name" size="25" placeholder="Enter Name" /></td>
+       </tr>
+       <tr>
+       	<td>Gender:</td>
+        <td><input type="radio" name="gender" value="Male" /> Male
+        	<input type="radio" name="gender" value="Female" /> Female
+        </td>
+        </tr>
+        <tr>
+        	<td>Password:</td>
+            <td><input type="password" name="password" size="25" id="pass" placeholder="Enter Password" /></td>
+            </tr>
+            <tr>
+            	<td align="center" colspan="2">
+                <input type="submit" value="REGISTER" />
+                <input type="reset" value="CLEAR" />
+                </td>
+                </tr> 
+        </table>
+    </form>
+    <br>
+	<br>
+</div>
+</body>
+</html>
