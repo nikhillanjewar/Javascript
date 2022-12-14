@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <style>
+        *{
+            font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+            
+        }
+        body{
+            color: aliceblue;
+            background: url(https://images.unsplash.com/photo-1502239608882-93b729c6af43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fEJsYWNrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+            background-repeat: no-repeat;
+            background-size: 100% 150%;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.094);
+            border-radius: 30px;
+            padding: 5% 10% 5% 13%;
+            margin-left: 25%;
+            margin-top: 3%;
+            margin-right: 25%;
+        }
+  
+        .form{
+            font-size: 5%;
+            display: flex;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            padding: 10% 10% 10% 10%;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        #heading,#abc{
+            display: block;
+            margin: 0 ;
+        }
+        #abc{
+            color: orange;
+        }
+
+        input[type=text],input[type=password]{
+            border: 2px solid rgba(106, 107, 107 , 0.1);
+            width: 100%;
+            padding: 3% 0% 3% 0%;
+            border-radius: 20px;
+            text-align: center;
+        }
+        input[type=submit],input[type=reset],input[type=button]{
+            border: none;
+            width: 100%;
+            background-color: yellow;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+            color: black;
+            font-weight: 1000;
+            width: 30%;
+            padding: 3% 3% 3% 3%;
+            border-radius: 30px;
+            height: 25%;
+            
+        }
+        input[type=submit]{
+            
+            border: 1px solid green;
+            background-color: white;
+           
+        }
+        input[type=submit]:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgba(61, 255, 2, 0.721);
+        }
+        input[type=reset]:hover{
+            color: rgb(255, 255, 255);
+            background-color: brown;
+        }
+        
+        table,td{
+            border-collapse: collapse;
+            font-weight: 750;
+            border: 1px solid red;
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function verify() {
+            var name = document.getElementById("name");
+            var gender = document.getElementsByName("gender");
+            var pass = document.getElementById("pass");
+            var msg = new Array();
+            var flag = 1;
+            var message = "Following Details are Required\n";
+            var message2 = "Following Details are Required<br>";
+            if (name.value == "") {
+                msg[0] = "Name is Required";
+                flag = 0;
+            } else { msg[0] = ""; }
+
+            if (gender[0].checked == false && gender[1].checked == false) {
+                msg[1] = "Select Gender";
+                flag = 0;
+            } else { msg[1] = ""; }
+
+            if (pass.value == "") {
+                msg[2] = "Password is Required";
+                flag = 0;
+            } else {
+                msg[2] = "";
+
+                if (pass.value.length < 8) {
+                    msg[3] = "Password must be 8 characters long";
+                    flag = 0;
+                } else { msg[3] = ""; }
+            }
+
+            if (flag == 0) {
+                // Show Error Messages
+                for (var x = 0; x <= 3; x++) {
+                    if (msg[x] != "") {
+                        message += msg[x] + "\n";
+                        message2 += msg[x] + "<br>";
+                    }
+                }
+                alert(message);
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="heading">Registration Form</h1>
+        <br>
+        <h3 id="abc"></h3>
+        <form method="post" action="" onSubmit="return verify()">
+            <table cellspacing="0" cellpadding="10">
+                <tr>
+                    <td colspan="2" >* All fields are mandatory</td>
+                </tr>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="name" id="name" size="25" placeholder="Enter Name" /></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="radio" name="gender" value="Male" /> Male
+                        <input type="radio" name="gender" value="Female" /> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="password" size="25" id="pass" placeholder="Enter Password" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="REGISTER" />
+                        <input type="reset" value="CLEAR" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </div>
+    <footer align="center">
+        <h3> &copy; Nikhil Lanjewar | Department of Electronic & Telecommunication Engineering | USN : EE20TET002 |
+            S.B.Jain, Nagpur</h3>
+
+    </footer>
+</body>
+
+</html>
