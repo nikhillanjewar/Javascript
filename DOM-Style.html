@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM-Style</title>
+</head>
+<body>
+<div id = "info">
+	Harshad Shantilal Mehta (29 July 1954 — 31 December 2001) was an Indian stockbroker and a convicted fraudster. Mehta's involvement in the 1992 Indian securities scam made him infamous as a market manipulator of the 27 criminal charges brought against Mehta, he was only convicted of four, before his death (by sudden heart attack) at age 47 in 2001. It was alleged that Mehta engaged in a massive stock manipulation scheme financed by worthless bank receipts, which his firm brokered for "ready forward" transactions between banks. Mehta was convicted by the Bombay High Court and the Supreme Court of India[3] for his part in a financial scandal valued at ₹100 billion (US$1.3 billion) which took place on the Bombay Stock Exchange (BSE). The scandal exposed the loopholes in the Indian banking system and the Bombay Stock Exchange (BSE) transaction system, and consequently the SEBI introduced new rules to cover those loopholes. He was on trial for 9 years, until he died at the end of 2001 from heart attack
+</div>
+<br></br>
+
+<button>Small Font</button>
+<button>Big Head</button>
+<button>Big Font</button>
+<button>Bold</button>
+<button>Itlaic</button>
+<button>Underline</button>
+<input type="color" id="info">
+<script type="text/javascript">
+	function DOM-Style(choice) {
+		switch (choice){
+			case 1 : document.getElementId("info").style.fontSize = "8px";
+			break;
+			case 2 : document.getElementId("heading").style.fontSize = "60px";
+			break;
+			case 3 : document.getElementId("info").style.fontSize = "40px";
+			break;
+			case 4 : document.getElementId("info").style.fontWeight = "bold";
+			break;
+			case 5 : document.getElementId("info").style.fontStyle = "Itlaic";
+			break;
+			case 6 : document.getElementId("info").style.textDecoration = "Underline";
+			break;
+			case 7:
+			var newcolor = document.getElementId("colorPicker").value;
+			document.getElementId("info").style.color = newcolor;
+			document.getElementId("heading").style.color = newcolor;
+			break;
+			
+		}
+		// body...
+	}
+</script>
+</body>
+</html>
