@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Functions in javascript</title>
+    <script lang="javascript" type="text/javascript">
+        function hello_nikhil(name, age, gender, email) {
+            document.write(name + " is " + age + " years old.");
+            document.write(gender);
+            document.write(email);
+
+            if (name == "" || age == "") 
+                return;
+        }
+    </script>
+</head>
+<body>
+    <p>Enter your Details</p>
+    <form>
+        <input name="t1" placeholder="Enter your Name"  /<br/>
+        <input name="t2" placeholder="Enter your Age"  /><br/>
+        <input name="t3" placeholder="Enter your Gender"  /><br/>
+        <input name="t4" placeholder="Enter your Email"  /><br/>
+        <input type="buton" onclick="hello_nikhil(t1.value, t2.value, t3.value, t4.value)" value="Say Hiii">
+    </form>
+</body>
+</html>

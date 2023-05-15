@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Variables in javascript</title>
+</head>
+<body>
+    <script lang="javascript" type="text/javascript">
+        var pin;
+        var actualpin = "3456";
+        var count = 0;
+        do{
+            pin = prompt("Enter your pin :");
+            count ++;
+        }while (pin!=actualpin && count<3);
+        if(pin == actualpin){
+            document.write("Welcome User");
+        }else{
+            document.write("Account Locked");
+        }
+    </Script>
+</body>
+</html>

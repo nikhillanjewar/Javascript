@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Variables in javascript</title>
+</head>
+
+    <script lang="javascript" type="text/javascript">
+        function Mouseover()
+        {
+        	document.images["img1"].src = "logo.png"
+        }
+        function Mouseout(){
+        	document.images["img1"].src = "logo.png"
+        }
+        function load(){
+        	document.images["img1"].src = "logo.png"
+        }
+    </Script>
+<body onload="load()">
+	<img name = "img1" onmouseover="Mouseover()" onmouseout="Mouseout()">
+</body>
+</html>
